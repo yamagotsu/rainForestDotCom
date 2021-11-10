@@ -14,5 +14,3 @@ function App() {
 }
 
 export default App;
-
-//eric git test
