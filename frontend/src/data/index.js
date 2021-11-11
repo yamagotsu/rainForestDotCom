@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://localhost:4000';
+const url = 'http://localhost:4000';
 
 
 export const fetchData = async () => {
@@ -9,7 +9,7 @@ export const fetchData = async () => {
     try {
         const { data } = await axios.get(menData)
 
-        console.log(data)
+        return data
     } catch (error) {
         console.error(`Woops fetch: ${error}`)
     }

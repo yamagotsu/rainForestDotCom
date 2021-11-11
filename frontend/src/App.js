@@ -8,21 +8,22 @@ import { fetchData } from './data'
 
 class App extends React.Component {
   state = {
-    data: {}
+    data: {},
   }
 
   async componentDidMount() {
     const data = await fetchData();
 
+    // set the state
     this.setState({ data })
   }
 
-
-
   render() {
+    const { data } = this.state;
+
     return (
       <div className="App container" >
-        <Category />
+        <Category data={data} />
       </div>
     );
   }
