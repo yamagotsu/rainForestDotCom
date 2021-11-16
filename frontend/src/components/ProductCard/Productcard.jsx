@@ -3,7 +3,7 @@ import { useCart } from 'react-use-cart'
 
 const Productcard = (props) => {
     const { addItem } = useCart();
-    console.log(props.item);
+
     return (
         <div className="col-11 col-md-6 col-lg-3 mx-0 mb-4">
             <div class="card p-0 overflow-hidden h-100 shadow">
