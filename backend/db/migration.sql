@@ -7,7 +7,7 @@ CREATE TABLE IF NOT EXISTS "products" (
     "category" text NULL,
     "subcategory" text NULL,
     "name" text NULL,
-    "current_price" float NULL,
+    "price" float NULL,
     "currency" text NULL,
     "likes_count" int NULL,
     "variation_0_color" text NULL,
