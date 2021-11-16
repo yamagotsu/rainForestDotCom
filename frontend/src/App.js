@@ -1,5 +1,4 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Button from 'react-bootstrap/Button';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Cart from './components/Cart/Cart';
