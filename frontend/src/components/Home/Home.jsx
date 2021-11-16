@@ -1,24 +1,22 @@
 import React from 'react';
 import Productcard from '../ProductCard/Productcard';
-import data from '../ProductCard/data';
-const Home = () => {
 
+const Home = ({ data }) => {
     return (
         <div>
             <h1 className='text-center mt-3'>All Items</h1>
             <section className='py-4 container'>
                 <div className='row justify-content-center'>
-                    {data.ProductData.map((item, index) => {
+                    {data.map((item) => {
                         return (
                             <Productcard
-                                key={index}
-                                img={item.img}
-                                title={item.title}
-                                description={item.description}
+                                key={item.id}
+                                img={item.image_url}
+                                title={item.name}
+                                description={item.subcategory}
                                 price={item.price}
                                 item={item}
                             />
-
                         )
                     })}
                 </div>

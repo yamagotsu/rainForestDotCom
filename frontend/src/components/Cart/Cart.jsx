@@ -13,6 +13,7 @@ const Cart = () => {
         emptyCart,
     } = useCart();
     if (isEmpty) return <h1 className='text-center'> Your Cart is Empty</h1>
+
     return (
         <section className='py-4 container'>
             <div className='row justify-content-center'>
@@ -24,9 +25,9 @@ const Cart = () => {
                                 return (
                                     <tr key={index}>
                                         <td>
-                                            <img src={item.img} style={{ height: '6rem' }} />
+                                            <img src={item.image_url} alt={item.name} style={{ height: '6rem' }} />
                                         </td>
-                                        <td>{item.title}</td>
+                                        <td>{item.name}</td>
                                         <td>{item.price}</td>
                                         <td>Quantity ({item.quantity})</td>
                                         <td>
