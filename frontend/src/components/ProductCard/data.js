@@ -12,11 +12,11 @@ const data = {
             price: 46,
         },
         {
-        id: 2,
-        img: img2,
-        title: "Red Watermelon",
-        description: '',
-        price: 46,
+            id: 2,
+            img: img2,
+            title: "Red Watermelon",
+            description: '',
+            price: 46,
         },
         {
             id: 3,
@@ -25,8 +25,8 @@ const data = {
             description: '',
             price: 46,
         },
-        
-    
+
+
     ]
 };
 export default data;
