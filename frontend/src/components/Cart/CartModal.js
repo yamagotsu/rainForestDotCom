@@ -1,9 +1,11 @@
-import React from 'react';
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button';
+import React, { useState } from 'react';
 import { useCart } from 'react-use-cart';
 
-const Cart = () => {
+const CartModal = () => {
+
     const {
-        isEmpty,
         totalUniqueItems,
         items,
         totalItems,
@@ -12,11 +14,25 @@ const Cart = () => {
         removeItem,
         emptyCart,
     } = useCart();
-    if (isEmpty) return <h1 className='text-center'>Your Cart is Empty</h1>
 
-    return (
-        <section className='py-4 container'>
-            <div className='row justify-content-center'>
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        View Cart
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Cart</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <div className='row justify-content-center'>
                 <div className='col-12'>
                     <h5>Cart ({totalUniqueItems}) total Items: ({totalItems}) </h5>
                     <table className='table table-light table-hover m-0'>
@@ -46,8 +62,15 @@ const Cart = () => {
                 </div>
                 <button className='btn btn-primary'>Buy Now</button>
             </div>
-        </section>
-    );
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    </>
+  );
 };
 
-export default Cart;
+export default CartModal;

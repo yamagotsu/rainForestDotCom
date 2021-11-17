@@ -5,7 +5,6 @@ import './App.css';
 import Cart from './components/Cart/Cart';
 import Home from './components/Home/Home';
 import { CartProvider } from 'react-use-cart';
-
 import { fetchData } from './data'
 
 class App extends React.Component {

@@ -1,8 +1,9 @@
 DROP DATABASE IF EXISTS rainforest;
 
-CREATE DATABASE rainforest;
+-- CREATE DATABASE rainforest;
 
-\c rainforest
+DROP TABLE IF EXISTS products;
+
 CREATE TABLE IF NOT EXISTS "products" (
     "category" text NULL,
     "subcategory" text NULL,
