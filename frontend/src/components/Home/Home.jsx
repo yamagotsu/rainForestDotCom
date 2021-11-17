@@ -1,10 +1,10 @@
 import React from 'react';
 import Productcard from '../ProductCard/Productcard';
 
-const Home = ({ data }) => {
+const Home = ({ data, category }) => {
     return (
         <div>
-            <h1 className='text-center mt-3'>All Items</h1>
+            <h1 className='text-center mt-3'>{category}</h1>
             <section className='py-4 container'>
                 <div className='row justify-content-center'>
                     {data.map((item) => {
