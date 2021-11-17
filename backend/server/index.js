@@ -9,6 +9,16 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
+//read all from products
+app.get('/', async (req, res) => {
+    let mensData = await pool.query(
+        "SELECT * FROM products;"
+    );
+    res.set('content-type', 'application/json');
+    res.status(200)
+    res.end(JSON.stringify(mensData.rows))
+});
+
 //read all men products
 app.get('/men', async (req, res) => {
     let mensData = await pool.query(

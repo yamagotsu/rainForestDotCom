@@ -40,9 +40,13 @@ const Cart = () => {
                         </tbody>
                     </table>
                 </div>
-                <div className='col-auto ms-auto'> <h2> Total Price: ${cartTotal} </h2> </div>
-                <div className='col-auto'>
-                    <button className='btn btn-danger m-2' btn btn-danger m-2 onClick={() => emptyCart()}> Clear Cart </button>
+                <div className="container">
+                    <div className='col-auto ms-auto'>
+                        <h2>Total Price: ${cartTotal.toFixed(2)}</h2>
+                    </div>
+                    <div className='col-auto'>
+                        <button className='btn btn-danger m-2' btn btn-danger m-2 onClick={() => emptyCart()}> Clear Cart </button>
+                    </div>
                 </div>
                 <button className='btn btn-primary'>Buy Now</button>
             </div>

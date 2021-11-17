@@ -7,6 +7,7 @@ import Home from './components/Home/Home';
 import { CartProvider } from 'react-use-cart';
 
 import { fetchData } from './data'
+import Categories from './components/Categories/Categories';
 
 class App extends React.Component {
   state = {
@@ -20,11 +21,18 @@ class App extends React.Component {
     this.setState({ data })
   }
 
+  handleCategoryClick = async (category) => {
+    const data = await fetchData(category);
+
+    this.setState({ data })
+  }
+
   render() {
     const { data } = this.state;
 
     return (
       <div className="App">
+        <Categories handleCategoryClick={this.handleCategoryClick} />
         <CartProvider>
           <Home data={data} />
           <Cart />
