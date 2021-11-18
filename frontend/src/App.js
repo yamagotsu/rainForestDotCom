@@ -5,6 +5,7 @@ import './App.css';
 import Cart from './components/Cart/Cart';
 import Home from './components/Home/Home';
 import { CartProvider } from 'react-use-cart';
+import Searchbar from './components/Searchbar';
 
 import { fetchData } from './data'
 
@@ -25,6 +26,9 @@ class App extends React.Component {
 
     return (
       <div className="App">
+      <Searchbar 
+      placeholder= "Enter a item" 
+      data={fetchData} />
         <CartProvider>
           <Home data={data} />
           <Cart />
