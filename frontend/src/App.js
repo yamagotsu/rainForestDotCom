@@ -7,6 +7,11 @@ import CartModal from './components/Cart/CartModal'
 import Home from './components/Home/Home';
 import FrontPage from './components/FrontPage/FrontPage'
 import { CartProvider } from 'react-use-cart';
+<<<<<<< HEAD
+import Searchbar from './components/Searchbar';
+
+=======
+>>>>>>> 16e8878a5f0a628bc58eb493157f12aaaeeee0f1
 import { fetchData } from './data'
 import Categories from './components/Categories/Categories';
 
@@ -43,6 +48,15 @@ class App extends React.Component {
 
     return (
       <div className="App">
+<<<<<<< HEAD
+      <Searchbar 
+      placeholder= "Enter a item" 
+      data={fetchData} />
+        <CartProvider>
+          <Home data={data} />
+          <Cart />
+        </CartProvider>
+=======
         {this.state.loggedIn ?
           <CartProvider>
             <CartModal />
@@ -56,6 +70,7 @@ class App extends React.Component {
           </CartProvider>
           : <FrontPage handleLogin={this.handleLogin} />
         }
+>>>>>>> 16e8878a5f0a628bc58eb493157f12aaaeeee0f1
       </div>
     );
   }
