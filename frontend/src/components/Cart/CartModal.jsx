@@ -24,7 +24,7 @@ const CartModal = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant="outline-secondary" onClick={handleShow}>
         View Cart
       </Button>
 
