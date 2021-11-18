@@ -1,6 +1,6 @@
 DROP DATABASE IF EXISTS rainforest;
 
--- CREATE DATABASE rainforest;
+CREATE DATABASE rainforest WITH ENCODING 'UTF8';
 
 DROP TABLE IF EXISTS products;
 
