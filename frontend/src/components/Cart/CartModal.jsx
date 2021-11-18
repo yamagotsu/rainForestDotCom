@@ -1,6 +1,7 @@
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
+import { Trash } from 'react-bootstrap-icons';
 import { useCart } from 'react-use-cart';
 
 const CartModal = () => {
@@ -37,28 +38,32 @@ const CartModal = () => {
               <h5>Cart ({totalUniqueItems}) total Items: ({totalItems}) </h5>
               <table className='table table-light table-hover m-0'>
                 <tbody>
-                  {items.map((item, index) => {
+                  {items.map((item) => {
                     return (
-                      <tr key={index}>
+                      <tr key={item.id} className="container">
                         <td>
-                          <img src={item.image_url} alt={item.name} style={{ height: '6rem' }} />
+                          <img className="align-self-center" src={item.image_url} alt={item.name} style={{ height: '6rem' }} />
                         </td>
                         <td>{item.name}</td>
                         <td>{item.price}</td>
                         <td>Quantity ({item.quantity})</td>
                         <td>
-                          <button className='btn btn-danger ms-2' onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>-</button>
-                          <button className='btn btn-danger ms-2' onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
-                          <button className='btn btn-danger ms-2' onClick={() => removeItem(item.id)}>Remove Item</button>
+                          <button className='btn btn-danger ms-2 w-75 m-1' onClick={() => updateItemQuantity(item.id, item.quantity - 1)}>-</button>
+                          <button className='btn btn-danger ms-2 w-75 m-1' onClick={() => updateItemQuantity(item.id, item.quantity + 1)}>+</button>
+                          <button className='btn btn-danger ms-2 w-75 m-1' onClick={() => removeItem(item.id)}><Trash /></button>
                         </td>
                       </tr>)
                   })}
                 </tbody>
               </table>
             </div>
-            <div className='col-auto ms-auto'> <h2> Total Price: ${cartTotal} </h2> </div>
-            <div className='col-auto'>
-              <button className='btn btn-danger m-2' btn btn-danger m-2 onClick={() => emptyCart()}> Clear Cart </button>
+            <div className="container d-flex align-items-center justify-content-center">
+              <div className='col-auto m-2'>
+                <h2>Total Price: ${cartTotal.toFixed(2)}</h2>
+              </div>
+              <div className='col-auto'>
+                <button className='btn btn-danger m-2' btn btn-danger m-2 onClick={() => emptyCart()}> Clear Cart </button>
+              </div>
             </div>
             <button className='btn btn-primary'>Buy Now</button>
           </div>

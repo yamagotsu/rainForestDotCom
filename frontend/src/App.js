@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Cart from './components/Cart/Cart';
+import CartModal from './components/Cart/CartModal'
 import Home from './components/Home/Home';
 import FrontPage from './components/FrontPage/FrontPage'
 import { CartProvider } from 'react-use-cart';
@@ -43,15 +44,16 @@ class App extends React.Component {
     return (
       <div className="App">
         {this.state.loggedIn ?
-          <>
+          <CartProvider>
+            <CartModal />
             {this.state.visible ?
               <Categories handleCategoryClick={this.handleCategoryClick} />
-              : <CartProvider>
+              : <>
                 <Home data={data} category={category} />
                 <Cart />
-              </CartProvider>
+              </>
             }
-          </>
+          </CartProvider>
           : <FrontPage handleLogin={this.handleLogin} />
         }
       </div>
