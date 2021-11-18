@@ -9,6 +9,16 @@ const port = process.env.PORT || 4000;
 app.use(cors());
 app.use(express.json());
 
+//read all from products
+app.get('/', async (req, res) => {
+    let mensData = await pool.query(
+        "SELECT * FROM products;"
+    );
+    res.set('content-type', 'application/json');
+    res.status(200)
+    res.json(mensData.rows)
+});
+
 //read all men products
 app.get('/men', async (req, res) => {
     let mensData = await pool.query(
@@ -16,7 +26,7 @@ app.get('/men', async (req, res) => {
     );
     res.set('content-type', 'application/json');
     res.status(200)
-    res.end(JSON.stringify(mensData.rows))
+    res.json(mensData.rows)
 });
 
 //read all women products
@@ -26,7 +36,7 @@ app.get('/women', async (req, res) => {
     );
     res.set('content-type', 'application/json');
     res.status(200)
-    res.end(JSON.stringify(womensData.rows))
+    res.json(womensData.rows)
 })
 
 //read all kids data
@@ -36,7 +46,7 @@ app.get('/kids', async (req, res) => {
     );
     res.set('content-type', 'application/json');
     res.status(200)
-    res.end(JSON.stringify(kidsData.rows))
+    res.json(kidsData.rows)
 })
 
 //read all accessories data
@@ -46,7 +56,7 @@ app.get('/accessories', async (req, res) => {
     );
     res.set('content-type', 'application/json');
     res.status(200)
-    res.end(JSON.stringify(accessoriesData.rows))
+    res.json(accessoriesData.rows)
 })
 
 //read all jewelry data
@@ -56,7 +66,7 @@ app.get('/jewelry', async (req, res) => {
     );
     res.set('content-type', 'application/json');
     res.status(200)
-    res.end(JSON.stringify(jewelryData.rows))
+    res.json(jewelryData.rows)
 })
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));

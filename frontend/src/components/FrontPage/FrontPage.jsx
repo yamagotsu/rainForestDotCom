@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import Card from 'react-bootstrap/card';
 
 export default class FrontPage extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props)
         this.state = {
             username: '',
@@ -11,7 +11,11 @@ export default class FrontPage extends Component {
     }
 
     onClick = () => {
-        this.props.update();
+        this.props.handleLogin()
+        // this.props.update();
+        // this.setState({this.props.loggedIn})
+        // this.setState({ loggedIn: true })
+        // console.log(this.props.loggedIn);
         // console.log(this.state.username);
         // console.log(this.state.password);
     }
@@ -31,9 +35,9 @@ export default class FrontPage extends Component {
     render() {
         return (
             <div id={'log-in-credentials'}>
-                <input id={'username'} value={this.state.username} onChange={event => this.updateUsernameValue(event)} name={'username'} placeholder={'Username'}/>
-                <input id={'password'} value={this.state.password} onChange={event => this.updatePasswordValue(event)} name={'password'} placeholder={'Password'}/>
-                <button id={'sign-in'} onClick = {this.onClick}>Sign In</button>
+                <input id={'username'} value={this.state.username} onChange={event => this.updateUsernameValue(event)} name={'username'} placeholder={'Username'} />
+                <input id={'password'} value={this.state.password} onChange={event => this.updatePasswordValue(event)} name={'password'} placeholder={'Password'} />
+                <button id={'sign-in'} onClick={this.onClick}>Sign In</button>
             </div>
         )
     }
