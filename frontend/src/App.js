@@ -62,7 +62,6 @@ class App extends React.Component {
       </div>
     );
   }
->>>>>>> 816b8e982cd57d6628bbe1b02573924011d4d7cf
 }
 
 export default App;
