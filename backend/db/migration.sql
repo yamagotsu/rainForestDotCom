@@ -1,7 +1,9 @@
 DROP DATABASE IF EXISTS rainforest;
 
-CREATE DATABASE rainforest WITH ENCODING 'UTF8';
+CREATE DATABASE rainforest WITH ENCODING = "UTF8" LC_COLLATE = 'fr_FR.utf8' LC_CTYPE = 'fr_FR.utf8' TEMPLATE = template0;
 
+\c rainforest
+-- \encoding LATIN1
 DROP TABLE IF EXISTS products;
 
 CREATE TABLE IF NOT EXISTS "products" (

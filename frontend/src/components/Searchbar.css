@@ -1,8 +1,12 @@
-.searchInputs{
-    margin-top:105px;    
+.search {
+    display: flex;
+    align-items: center;
+    margin: auto;
 }
 
-.search input {
+.searchInput {
+    display: flex;
+    align-items: center;
     background-color:white;
     border: 4;
     border-radius:4px;
@@ -10,17 +14,14 @@
     border-bottom-right-radius: 4px;
     font-size: 18px;
     padding: 15px;
-    height: 30px;
+    height: 40px;
     width: 300px;
 }
 
-.searchIcon{
-    height: 60px;
-    width: 50px;
-    background-color: white;
-    display: grid;
-    place-items: center;
+.searchInput input {
+    margin: auto;
 }
+
 
 input:focus{
     outline: none;

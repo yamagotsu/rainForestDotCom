@@ -3,6 +3,9 @@ import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import { Trash } from 'react-bootstrap-icons';
 import { useCart } from 'react-use-cart';
+import CartButton from './CartButton';
+import './CartButton.css'
+import Searchbar from '../Searchbar';
 
 const CartModal = () => {
 
@@ -24,9 +27,12 @@ const CartModal = () => {
 
   return (
     <>
-      <Button variant="outline-secondary" onClick={handleShow}>
-        View Cart
+    <div className='button-right'>
+      <Searchbar />
+      <Button variant="dark" onClick={handleShow}>
+        <CartButton />
       </Button>
+    </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

@@ -7,10 +7,15 @@ import CartModal from './components/Cart/CartModal'
 import Home from './components/Home/Home';
 import FrontPage from './components/FrontPage/FrontPage'
 import { CartProvider } from 'react-use-cart';
+<<<<<<< HEAD
 
 import Searchbar from './components/Searchbar';
 
 
+=======
+import Searchbar from './components/Searchbar';
+
+>>>>>>> 3f746192ec36838f532a3e2cf62806991c0d492d
 import { fetchData } from './data'
 import Categories from './components/Categories/Categories';
 
@@ -20,6 +25,7 @@ class App extends React.Component {
     loggedIn: false,
     category: '',
     visible: true,
+    itemCount: 29,
   }
 
   async componentDidMount() {
@@ -28,6 +34,7 @@ class App extends React.Component {
     // set the state
     this.setState({ data })
   }
+
 
   handleCategoryClick = async (category) => {
     const data = await fetchData(category);
@@ -47,6 +54,7 @@ class App extends React.Component {
 
     return (
       <div className="App">
+<<<<<<< HEAD
 
       <Searchbar 
       placeholder= "Enter a item"/>
@@ -54,9 +62,12 @@ class App extends React.Component {
           <Home data={data} />
           <Cart />
         </CartProvider>
+=======
+>>>>>>> 3f746192ec36838f532a3e2cf62806991c0d492d
         {this.state.loggedIn ?
           <CartProvider>
             <CartModal />
+            {/* <Searchbar /> */}
             {this.state.visible ?
               <Categories handleCategoryClick={this.handleCategoryClick} />
               : <>
@@ -67,7 +78,10 @@ class App extends React.Component {
           </CartProvider>
           : <FrontPage handleLogin={this.handleLogin} />
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 3f746192ec36838f532a3e2cf62806991c0d492d
       </div>
     );
   }
