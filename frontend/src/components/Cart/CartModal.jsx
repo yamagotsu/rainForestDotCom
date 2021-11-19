@@ -2,6 +2,8 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button';
 import React, { useState } from 'react';
 import { useCart } from 'react-use-cart';
+import CartButton from './CartButton';
+import './CartButton.css'
 
 const CartModal = () => {
 
@@ -23,9 +25,11 @@ const CartModal = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        View Cart
+    <div className='button-right'>
+      <Button variant="dark" onClick={handleShow}>
+        <CartButton />
       </Button>
+    </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

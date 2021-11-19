@@ -8,13 +8,14 @@ import FrontPage from './components/FrontPage/FrontPage'
 import { CartProvider } from 'react-use-cart';
 import { fetchData } from './data'
 import Categories from './components/Categories/Categories';
-
+import CartModal from './components/Cart/CartModal';
 class App extends React.Component {
   state = {
     data: [],
     loggedIn: false,
     category: '',
     visible: true,
+    itemCount: 29,
   }
 
   async componentDidMount() {
@@ -23,6 +24,7 @@ class App extends React.Component {
     // set the state
     this.setState({ data })
   }
+
 
   handleCategoryClick = async (category) => {
     const data = await fetchData(category);
@@ -47,7 +49,8 @@ class App extends React.Component {
             {this.state.visible ?
               <Categories handleCategoryClick={this.handleCategoryClick} />
               : <CartProvider>
-                <Home data={data} category={category} />
+                <CartModal />
+                <Home data={data} category={category} setItemCount={this.setItemCount} />
                 <Cart />
               </CartProvider>
             }

@@ -1,0 +1,10 @@
+.cart-icon {
+    margin: .2em;
+}
+
+.button-right {
+    display: flex;
+    justify-content: right !important;
+    margin: .7em .7em 0 0;
+    padding: 0;
+}

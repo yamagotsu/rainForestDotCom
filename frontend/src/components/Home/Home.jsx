@@ -1,7 +1,7 @@
 import React from 'react';
 import Productcard from '../ProductCard/Productcard';
 
-const Home = ({ data, category }) => {
+const Home = ({ data, category, setItemCount }) => {
     return (
         <div>
             <h1 className='text-center mt-3'>{category}</h1>
@@ -16,6 +16,7 @@ const Home = ({ data, category }) => {
                                 description={item.subcategory}
                                 price={item.price}
                                 item={item}
+                                setItemCount={setItemCount}
                             />
                         )
                     })}
