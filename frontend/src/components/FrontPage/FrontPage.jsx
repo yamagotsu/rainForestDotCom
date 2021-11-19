@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 export default class FrontPage extends Component {
-    constructor (props) {
+    constructor(props) {
         super(props)
         this.state = {
             username: '',
@@ -10,7 +10,11 @@ export default class FrontPage extends Component {
     }
 
     onClick = () => {
-        this.props.update();
+        this.props.handleLogin()
+        // this.props.update();
+        // this.setState({this.props.loggedIn})
+        // this.setState({ loggedIn: true })
+        // console.log(this.props.loggedIn);
         // console.log(this.state.username);
         // console.log(this.state.password);
     }
