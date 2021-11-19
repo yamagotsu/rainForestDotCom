@@ -11,7 +11,7 @@ import Searchbar from './components/Searchbar';
 
 import { fetchData } from './data'
 import Categories from './components/Categories/Categories';
-import CartModal from './components/Cart/CartModal';
+
 class App extends React.Component {
   state = {
     data: [],
@@ -49,8 +49,8 @@ class App extends React.Component {
       <div className="App">
         {this.state.loggedIn ?
           <CartProvider>
-            <Searchbar />
             <CartModal />
+            {/* <Searchbar /> */}
             {this.state.visible ?
               <Categories handleCategoryClick={this.handleCategoryClick} />
               : <>
